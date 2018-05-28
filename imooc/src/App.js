@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {Button} from 'antd-mobile';
 
 class App extends React.Component{
   render(){
@@ -49,7 +50,7 @@ class 一营 extends React.Component{
     return (
       <div>
       <h2>一营营长,{this.props.老大}</h2>
-      <button onClick={this.addSolder}>新兵入伍</button>
+      <Button  type="primary" onClick={this.addSolder}>新兵入伍</Button>
       <ul>
         {this.state.solders.map(v=>{
           return <li key = {v}>{v}</li>
