@@ -8,10 +8,11 @@ import { counter } from './index.redux';
 
 
 const store = createStore(counter, compose(
-  applyMiddleware(thunk),
+  applyMiddleware(thunk),   // 开始redux-thunk中间件的服务
   window.devToolsExtension ? window.devToolsExtension() : () => {},
-)); // 开始redux-thunk中间件的服务
+));
 
+//Provider包整个一层，把store传入App
 ReactDom.render(
   (<Provider store={store}>
 	  <App />
