@@ -1,23 +1,27 @@
-import React from 'react'
+import React from 'react';
 import ReactDom from 'react-dom';
-import {createStore, applyMiddleware, compose} from 'redux'
-import thunk from 'redux-thunk'
+import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
+import { Provider } from 'react-redux';
 import App from './App';
-import {counter, addGun, removeGun,addGunAsync} from './index.redux'
+import { counter } from './index.redux';
 
 
-const store = createStore(counter,compose(
+const store = createStore(counter, compose(
   applyMiddleware(thunk),
-  window.devToolsExtension?window.devToolsExtension():()=>{}
-)) //开始redux-thunk中间件的服务
+  window.devToolsExtension ? window.devToolsExtension() : () => {},
+)); // 开始redux-thunk中间件的服务
 
-function render() {
-  ReactDom.render(<App store={store} addGun={addGun} removeGun={removeGun} addGunAsync={addGunAsync} />,document.getElementById('root'))
-}
+ReactDom.render(
+  (<Provider store={store}>
+	  <App />
+   </Provider>),
+  document.getElementById('root'),
+);
 
-render()
+// render();
 
-store.subscribe(render)
+// store.subscribe(render);
 
 // import { createStore} from 'redux';
 // //新建Store
