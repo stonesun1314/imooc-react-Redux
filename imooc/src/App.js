@@ -16,7 +16,6 @@ import { addGun, removeGun, addGunAsync } from './index.redux';
   //你要什么方法，放到props里，自动dispatch
   { addGun, removeGun, addGunAsync }
 )
-
 class App extends React.Component {
   render() {
     console.log('num'+this.props.num);
