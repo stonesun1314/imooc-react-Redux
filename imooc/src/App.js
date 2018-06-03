@@ -12,12 +12,14 @@ import { addGun, removeGun, addGunAsync } from './index.redux';
 // App = connect(mapStateToProps, actionCreators)(App);
 @connect(
   //你要state什么属性放到props里
-  state=>({num:state},
+  state=>({num:state.counter}),
   //你要什么方法，放到props里，自动dispatch
-  { addGun, removeGun, addGunAsync }))
+  { addGun, removeGun, addGunAsync }
+)
 
 class App extends React.Component {
   render() {
+    console.log('num'+this.props.num);
     return (
 	    <div>
 		    <h1>现在有机枪{this.props.num}把</h1>
