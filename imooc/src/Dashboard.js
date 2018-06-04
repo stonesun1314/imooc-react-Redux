@@ -22,7 +22,7 @@ class Dashboard extends React.Component{
 
   render(){
     console.log(this.props);
-
+    const match = this.props.match;
     const redirectToLogin = <Redirect to="/login"></Redirect>
     const App = (
       <div>
@@ -30,13 +30,13 @@ class Dashboard extends React.Component{
       <button onClick={this.props.logout} >登出</button>
         <ul>
           <li>
-            <Link to="/dashboard/">一营</Link>
+            <Link to={`${match.url}`}>一营</Link>
           </li>
           <li>
-            <Link to="/dashboard/erying">二营</Link>
+            <Link to={`${match.url}/erying`}>二营</Link>
           </li>
           <li>
-            <Link to="/dashboard/qibinglian">骑兵连</Link>
+            <Link to={`${match.url}/qibinglian`}>骑兵连</Link>
           </li>
         </ul>
         <Switch>
