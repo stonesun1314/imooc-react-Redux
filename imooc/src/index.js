@@ -40,7 +40,7 @@ ReactDom.render(
     </BrowserRouter>
 
    </Provider>),
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // render();
