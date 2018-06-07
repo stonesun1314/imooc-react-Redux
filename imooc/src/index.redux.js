@@ -5,7 +5,7 @@ const REMOVE_GUN = '减机关枪'
 
 //reducer
 export function counter(state=10,action) {
-  console.log(state);
+  //console.log(state);
   switch (action.type) {
     case '加机关枪':
       return state+1

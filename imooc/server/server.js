@@ -14,14 +14,14 @@ const User = mongoose.model('user',new mongoose.Schema({
 }))
 //新增数据
 // User.create({
-//   user:'imooc',
-//   age:18
-// },function(err,doc) {
-//   if(!err){
-//     console.log(doc);
-//   }else{
-//     console.log(err);
-//   }
+// 	user:'xiaohua',
+// 	age:12
+// },function(err, doc){
+// 	if (!err) {
+// 		console.log(doc)
+// 	}else{
+// 		console.log(err)
+// 	}
 // })
 
 // User.remove({age:18},function(err,doc) {
@@ -41,9 +41,9 @@ app.get('/',function(req,res){
 })
 
 app.get('/data',function(req,res) {
-  User.find({},function(err,doc) {
-    res.json(doc)
-  })
+	User.findOne({user:'xiaohua'},function(err,doc){
+		res.json(doc)
+	})
 
 })
 

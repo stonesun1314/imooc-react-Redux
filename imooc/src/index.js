@@ -9,14 +9,16 @@ import reducers from './reducer'
 import Switch from 'react-router-dom/Switch';
 import Auth from './Auth.js'
 import Dashboard from './Dashboard.js'
+import logger from 'redux-logger'
+import './config'
 
 
 const store = createStore(reducers, compose(
-  applyMiddleware(thunk),   // 开始redux-thunk中间件的服务
+  applyMiddleware(thunk,logger),   // 开始redux-thunk中间件的服务
   window.devToolsExtension ? window.devToolsExtension() : () => {},
 ));
 
-console.log(store.getState());
+//console.log(store.getState());
 
 
 //登录

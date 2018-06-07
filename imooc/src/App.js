@@ -18,7 +18,7 @@ import { addGun, removeGun, addGunAsync } from './index.redux';
 )
 class App extends React.Component {
   render() {
-    console.log('num'+this.props.num);
+    //console.log('num'+this.props.num);
     return (
 	    <div>
 		    <h1>现在有机枪{this.props.num}把</h1>
