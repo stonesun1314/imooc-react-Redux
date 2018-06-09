@@ -1,4 +1,5 @@
 import axios from 'axios'
+import {add}
 
 const LOGIN = 'LOGIN';
 const LOGOUT = 'LOGOUT';
